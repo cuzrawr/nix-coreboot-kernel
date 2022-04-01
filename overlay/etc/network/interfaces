@@ -5,7 +5,7 @@
 
 # NOTE: in future upd source all configs in interfaces.d, using auto-generation script or something.
 
-#source /etc/network/interfaces.d/*       (/* empthy dir not work, can cause errs)
+#source /etc/network/interfaces.d/*       ( - /* empthy dir not work, can cause errs)
 # change this
 #CIDR_PREFIX="10.0.0." - not work
 
@@ -17,18 +17,25 @@
 auto lo
 iface lo inet loopback
 
+
+# configure some other ifaces too
+source-directory /etc/network/interfaces.d
+
+
+# https://www.systutorials.com/docs/linux/man/5-interfaces/#lbAL ( pattern matching interfaeces ) - not work
+# test with BR2_PACKAGE_IFUPDOWN enabled
+#  ethX - all dhcp
+#auto /eth[0-9]=ifupeth
+#iface ifupeth inet dhcp
+
+# auto eth0
+# iface eth0 inet dhcp
+#
 # setup eth0
-#auto eth0
-#iface eth0 inet dhcp
 auto eth0
 iface eth0 inet static
      address 172.16.16.1
      netmask 255.255.255.0
-#
-# https://www.systutorials.com/docs/linux/man/5-interfaces/#lbAL ( pattern matching interfaeces ) - not work
-#  ethX - all dhcp
-#auto /eth*=eth
-#iface eth inet dhcp
 
 auto wg0
 #iface wg0 inet manual

@@ -1,0 +1,18 @@
+#!/bin/sh
+# S34ifaceshelper
+# Parse
+# /sys/class/net
+# Populate
+# etc/network/interfaces.d
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+test -r /etc/network/interfaces.d && mkdir -p /etc/network/interfaces.d
+
+
+# exclude some hardcoded ifaces
+for netiface in $(ls -A /sys/class/net/ | grep -i -v -E "(wg0|eth0|lo)" );
+do
+        set -- $netiface;
+        #echo $1 $1
+        printf "auto $1\n    iface $1 inet dhcp\n" > /etc/network/interfaces.d/$1
+done
