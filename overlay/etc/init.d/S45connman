@@ -1,5 +1,6 @@
 # overlay dummy file etc/init.d/S45connman
 #
-# THIS FILE INTENTIONALLY LEFT BLANK, BECAUSE connman ( BR2_PACKAGE_CONNMAN ) CONFLICTS WITH CUSTOM ifup SCRIPTS.
+# THIS FILE INTENTIONALLY LEFT BLANK,
+# BECAUSE connman ( BR2_PACKAGE_CONNMAN ) CONFLICTS WITH CUSTOM ifup SCRIPTS.
 #
 # overlay dummy file etc/init.d/S45connman

@@ -1,8 +1,23 @@
-# REWRITE THIS
-# ALL SYSTEM VARIABLES GOES HERE
-# BETA
-#WG_PEERS="qATv7RV3pTpwM+lWTDSPfVkwPLkWx3lr4x8DaKpKC0s=,30;/adUYOskAITkevdEKaBWWJFGgoatMrZJ06uHaWOPCRc=,35"
+# ##############################################################################
+# etc/default/systemconfig - system variables
+# ##############################################################################
 
+# ##############################################################################
+# LIST OF PROHIBITED SYSTEM VARIABLES, DO NOT USE THEM ! ! !
+# ##############################################################################
+# IFACE
+# LOGICAL
+# ADDRFAM
+# METHOD
+# CLASS
+# MODE
+# PHASE
+# VERBOSITY
+# PATH
+
+# ##############################################################################
+# SYSCONFIG
+# ##############################################################################
 WG_IFACE_NAME="wg0"
 #CDIR_PREFIX="10.0.0."
 SSHD_PRIVKEY="09543nugpnhpug"
@@ -15,3 +30,5 @@ WG_LISTEN_PORT="9955"
 
 # test
 ALLOWED_INTERFACES="eth0,eth1,tun0"
+
+# ##############################################################################

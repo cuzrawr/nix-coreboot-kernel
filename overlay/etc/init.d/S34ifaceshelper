@@ -4,6 +4,11 @@
 # /sys/class/net
 # Populate
 # etc/network/interfaces.d
+
+# ##############################################################################
+# etc/init.d/S34ifaceshelper - init.d script
+# ##############################################################################
+
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 test -r /etc/network/interfaces.d && mkdir -p /etc/network/interfaces.d
