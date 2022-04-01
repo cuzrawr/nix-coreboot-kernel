@@ -1,0 +1,28 @@
+#!/bin/sh
+#            BEEEEEEEEEEEEEETAAAAAAAAAAAA DONT USE
+# SSH, WG & iptables config script here.
+# Init scripts names: S98wireguard
+# REWRITE THIS ! REWRITE THIS ! REWRITE THIS ! REWRITE THIS ! REWRITE THIS ! REWRITE THIS ! REWRITE THIS ! RE
+#
+
+#PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+# check conf exist
+test -r /etc/default/systemconfig && . /etc/default/systemconfig
+
+# set base WG settings
+wg set wg0 listen-port $WG_LISTEN_PORT private-key $WG_PRIVKEY
+
+
+##################################################################################
+# create wireguard interface
+#ip l add dev $WG_IFACE_NAME type wireguard
+# set iface up #TODO guarantee iptables setup before to avoid leakes
+#ip l set dev $WG_IFACE_NAME up
+
+IFS=";"
+for peer in $WG_ALLOWED_PEERS;
+do
+        IFS=","
+        set -- $peer;
+        wg set $WG_IFACE_NAME peer $1 allowed-ips $WG_ALLOWED_IPS_PREFIX$2/32
+done

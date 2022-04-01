@@ -1,0 +1,30 @@
+# the TCP port that Dropbear listens on
+# DROPBEAR_PORT=4444
+# DROPBEAR_PORT="-p [address:]port"
+
+
+# any additional arguments for Dropbear
+# -B allows blank passwords, see dropbear man
+DROPBEAR_EXTRA_ARGS="-B"
+
+# specify an optional banner file containing a message to be
+# sent to clients before they connect, such as "/etc/issue.net"
+#DROPBEAR_BANNER=""
+
+#
+# Use  dropbear-key  util for key generation.
+# Or  dropbearconvert  to convert between Dropbear and OpenSSH.
+
+# Few examples:
+# dropbearkey -t rsa -s 4096 -f key
+# dropbearkey -y -f key | grep ^ssh-rsa > key_public
+
+# RSA hostkey file (default: /etc/dropbear/dropbear_rsa_host_key)
+#DROPBEAR_RSAKEY="/etc/dropbear/dropbear_rsa_host_key"
+
+# DSS hostkey file (default: /etc/dropbear/dropbear_dss_host_key)
+#DROPBEAR_DSSKEY="/etc/dropbear/dropbear_dss_host_key"
+
+
+# test
+DROPBEAR_ARGS="$DROPBEAR_EXTRA_ARGS"
