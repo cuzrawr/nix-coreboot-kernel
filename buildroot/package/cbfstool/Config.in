@@ -1,0 +1,8 @@
+config BR2_PACKAGE_CBFSTOOL
+	bool "CBFSTOOL"
+	help
+	  CBFSTOOL - is a utility used for managing
+	  coreboot file system (CBFS) components
+	  in a ROM image.
+
+	  https://doc.coreboot.org/cbfstool

@@ -23,6 +23,7 @@ WG_IFACE_NAME="wg0"
 SSHD_PRIVKEY="09543nugpnhpug"
 #
 WG_PRIVKEY="/etc/wireguard/wg0exampleprivate.key"
+# test this =  = wg set %i private-key <(pass WireGuard/private-keys/%i)
 WG_ALLOWED_IPS_PREFIX="10.0.0." #last octet gets appened
 WG_ALLOWED_PEERS='aTJL7PyAj8qZeVXzOeU/vK7uaZz/5c9WWKWjoiVhFxE=,2;BLJoIJvKWLzHMG9XqN/DVC5Ebd/4ETDDtBHCbBaQuV4=,3;jX+rhNw7MGM69mz0OqPR4G4xXPRUkKyCRAN+E/Yr800=,4;pp/6s73O5SoO80p8qxrDIbVU8TNK/LUtMdr87w0ui1A=,6'
 #WG_ALLOWED_PEER=""
